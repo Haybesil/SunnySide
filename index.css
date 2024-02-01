@@ -6,9 +6,12 @@
 header {
    background-image: url(Images/image-header.jpg);
    height: 50vh;
+   padding-block: 5vh;
+   padding-inline: 5vw;
    background-position: center;
    background-size: cover;
    background-repeat: no-repeat;
+  
 }
 
 nav {
@@ -36,11 +39,6 @@ header ul li:nth-child(4) {
     border-radius: 50px;
     font-weight: 900;
     text-transform: uppercase;
-    
-
-    /* height: 10vh;
-    display: flex;
-    align-items: center; */
 }
 
 header ul li:nth-child(4) a {
@@ -48,8 +46,7 @@ header ul li:nth-child(4) a {
 }
 
 header ul li:nth-child(4) a:hover {
-    cursor: pointer;
-    color: #2fa72b;
+    cursor: pointer
 }
 
 header h1 {
@@ -97,17 +94,22 @@ main div:nth-child(1), main div:nth-child(4) {
 
 main div:nth-child(1) h1, main div:nth-child(4) h1 {
     padding-top: 50px;
-    color: #305386;
+    color: #000;
+    font-size: 2.3rem;
+    font-family: 'Fraunces', serif;
 }
 
 main div:nth-child(1) p, main div:nth-child(4) p {
     padding-top: 25px;
     color: #183531;
+    font-family: 'Barlow', sans-serif;
+    opacity: 0.8;
 }
 
 main div:nth-child(1) h5, main div:nth-child(4) h5 {
     padding-top: 25px;
     color: #2b4224;
+    font-family: 'Fraunces', serif;
 }
 
 main div:nth-child(2) {
@@ -126,12 +128,14 @@ main div:nth-child(5) h1, main div:nth-child(6) h1 {
     text-align: center;
     padding-top: 190px;
     color: #093d36;
+    font-family: 'Fraunces', serif;
 }
 
 main div:nth-child(5) p, main div:nth-child(6) p {
     text-align: center;
     padding-top: 20px;
     color: #093d36;
+    font-family: 'Barlow', sans-serif;
 }
 
 
@@ -145,7 +149,15 @@ section h2 {
     font-size: 25px;
     margin-top: 100px;
     letter-spacing: 6px;
+    font-weight: 900;
     color: #083832;
+    font-family: 'Fraunces', serif;
+    opacity: 0.5;
+}
+
+section .opacity {
+    font-family: 'Barlow', sans-serif;
+    opacity: 0.7;
 }
 
 section h4 {
@@ -162,7 +174,12 @@ section img {
     align-items: center;
 }
 
-section h2+div {
+section h4+p {
+    opacity: 0.5;
+ }
+
+
+section div.testimonials {
     display: flex;
     padding: 45px;
     flex-direction: row;
@@ -171,27 +188,46 @@ section h2+div {
     margin-top: 50px;
 }
 
+
+
 section p, section h4 {
-    color: #359e90;
+    color: #000;
 }
+
+section h4 {
+    font-family: 'Fraunces', sans-serif;
+}
+
 
 article {
-    display: flex;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 }
 
-article img {
-   height: 300px; 
-   width: 25%;
-   /* width: 200px;
-   max-height: 100%;
-   min-width: 100%;
-   object-fit: cover;
-   vertical-align: bottom; */
+article div {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 60vh;
+}
+
+
+article div:nth-child(1) {
+background-image: url(/Images/image-gallery-milkbottles.jpg);
+}
+article div:nth-child(2) {
+    background-image: url(/Images/image-gallery-orange.jpg);
+}
+article div:nth-child(3) {
+    background-image: url(/Images/image-gallery-cone.jpg);
+}
+article div:nth-child(4) {
+    background-image: url(/Images/image-gallery-sugarcubes.jpg);
 }
 
 footer {
     background-color: #7fd4c8;
+    opacity: 0.7;
 }
 
 footer h1 {
@@ -200,6 +236,8 @@ footer h1 {
     padding-top: 55px;
     font-size: 45px;
     color: #083832;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
 }
 
 footer ul {
@@ -210,6 +248,7 @@ footer ul {
     margin-right: 27px;
     flex-flow: row;
     align-items: center;
+    font-family: 'Barlow';
 }
 
 footer ul a {
@@ -229,3 +268,159 @@ footer ul+div {
     margin-left: px;
     gap: 20px;
 }
+
+         
+
+
+         /* Mobile */
+
+@media (max-width: 900px) {
+ 
+    header {
+        background-image: url(Images/mobile/image-header.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 50vh;
+    }
+
+    header ul {
+        display: none;
+    }
+
+    .ham {
+        display: block;
+    }
+
+    header h1 {
+        margin-top: 16px;
+        text-align: center;
+        text-transform: uppercase;
+        margin-inline: 10vw;
+        letter-spacing: 9px;
+    }
+    
+    header h1+img {
+        display: block;
+        margin: auto;
+        margin-top: 5px;
+        height: 70px;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    main div {
+        height: 60vh;
+    }
+
+    main div:nth-child(5), main div:nth-child(6) {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+
+    main div:nth-child(1) {
+        order: 2;
+    }
+
+    main div:nth-child(2) {
+        order: 1;
+    }
+
+    main div:nth-child(3) {
+        order: 3;
+    }
+
+    main div:nth-child(4) {
+        order: 4;
+    }
+    main div:nth-child(5) {
+        order: 5;
+    }
+
+    main div:nth-child(6) {
+        order: 6;
+    }
+
+    main div:nth-child(1) h1, main div:nth-child(4) h1 {
+        text-align: center;
+        margin-inline: 9vw;
+        padding-top: 40px;
+    }
+
+    main div:nth-child(1) p, main div:nth-child(4) p {
+        text-align: center;
+        padding-right: 14px;
+        margin-inline: 2vw;
+        font-size: 20px;
+        padding-top: 50px;
+        color: #183531;
+    }
+
+    main div:nth-child(1) h5, main div:nth-child(4) h5 {
+        text-align: center;
+        padding-top: 60px;
+        font-size: 18px;
+        color: #2b4224;
+    }
+
+    main div:nth-child(5) h1, main div:nth-child(6) h1 {
+       text-align: center;
+       position: relative;
+       top: 40px;
+       opacity: 0.6;
+       font-size: 2.4rem;
+    }
+    
+    main div:nth-child(5) p, main div:nth-child(6) p {
+        text-align: center;
+        padding-top: 20px;
+        margin-inline: 6vw;
+        font-size: 20px;
+        position: relative;
+        top: 40px;
+        opacity: 0.6;
+    }
+    
+    section div.testimonials {
+        display: flex;
+        flex-direction: column;
+    }
+
+    section div.testimonials>div {
+        margin-top: 40px;
+    }
+
+    section .opacity {
+        padding-top: 15px;
+        font-size: 20px;
+    }
+
+    section h4 {
+        font-size: 18px;
+        font-weight: bolder;
+    }    
+
+    section h4+p {
+       position: relative;
+       bottom: 10px;
+       font-size: 16px;
+    }
+
+    article {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    article div {
+        height: 30vh;
+    }
+    
+    
+}
+
+
+      
